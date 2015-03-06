@@ -4,6 +4,7 @@
   "description": "A utility for reading markdown files and parsing them into (optionally filtered) lists of tokens",
   "main": "tokenize-markdown.js",
   "scripts": {
+    "prepublish": "npm test",
     "pretest": "grunt lint",
     "test": "grunt test"
   },
