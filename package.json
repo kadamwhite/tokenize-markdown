@@ -11,7 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "lodash.isregexp": "^3.0.0",
-    "lodash.merge": "^3.0.2",
     "lodash.reduce": "^3.0.0",
     "marked": "^0.3.3"
   },
@@ -25,6 +24,7 @@
     "jscs-stylish": "^0.3.1",
     "jshint-stylish": "^1.0.1",
     "load-grunt-tasks": "^3.1.0",
+    "lodash.merge": "^3.0.2",
     "proxyquire": "^1.4.0",
     "sinon": "^1.12.2",
     "sinon-chai": "^2.6.0"
