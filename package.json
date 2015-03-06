@@ -1,0 +1,11 @@
+{
+  "name": "tokenize-markdown",
+  "version": "0.1.0",
+  "description": "A utility for reading markdown files and parsing them into (optionally filtered) lists of tokens",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "K.Adam White (http://www.kadamwhite.com/)",
+  "license": "MIT"
+}
