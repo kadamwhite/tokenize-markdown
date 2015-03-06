@@ -1,5 +1,7 @@
 # tokenize-markdown
 
+[![Build Status](https://travis-ci.org/kadamwhite/tokenize-markdown.svg?branch=master)](https://travis-ci.org/kadamwhite/tokenize-markdown)
+
 Get an array of markdown tokens per file from an array of files, optionally
 filtered to only those tokens matching a particular set of attributes
 
