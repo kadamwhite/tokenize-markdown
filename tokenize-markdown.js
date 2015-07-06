@@ -124,5 +124,6 @@ function tokenizeMarkdownFromFiles( files, filterParams ) {
 }
 
 module.exports = {
-  fromFiles: tokenizeMarkdownFromFiles
+  fromFiles: tokenizeMarkdownFromFiles,
+  fromString: convertToTokens
 };
