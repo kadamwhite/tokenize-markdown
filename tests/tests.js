@@ -198,4 +198,58 @@ describe( 'tokenize-markdown', function() {
 
   });
 
+  describe( 'tokenizeFile', function() {
+    var mdString;
+
+    beforeEach(function() {
+      mdString = [
+        '# Some code',
+        '```js',
+        'var myVar = "foo";',
+        '```',
+        'And then another:',
+        '```javascript',
+        'while( 1 ) console.log( "crash your browser" );',
+        '```'
+      ].join( '\n' );
+    });
+
+    it( 'exists', function() {
+      expect( tokenizeMarkdown.fromString ).to.exist;
+    });
+
+    it( 'is a method', function() {
+      expect( tokenizeMarkdown.fromString ).to.be.a( 'function' );
+    });
+
+    it( 'tokenizes a string of markdown', function() {
+      var tokens = tokenizeMarkdown.fromString( mdString );
+      expect( tokens ).to.be.an( 'array' );
+      expect( tokens.length ).to.equal( 4 );
+    });
+
+    it( 'tokenizes a string of markdown and filters by type', function() {
+      var tokens = tokenizeMarkdown.fromString( mdString, {
+        type: 'code'
+      });
+      expect( tokens ).to.be.an( 'array' );
+      expect( tokens.length ).to.equal( 2 );
+      tokens.forEach(function( token ) {
+        expect( token.type ).to.equal( 'code' );
+      });
+    });
+
+    it( 'ignores undefined filter parameters', function() {
+      var tokens = tokenizeMarkdown.fromString( mdString, {
+        type: 'code',
+        lang: void 0 // undefined
+      });
+      expect( tokens ).to.be.an( 'array' );
+      expect( tokens.length ).to.equal( 2 );
+      tokens.forEach(function( token ) {
+        expect( token.type ).to.equal( 'code' );
+      });
+    });
+  });
+
 });
