@@ -53,14 +53,19 @@ function convertToTokens( contents, filterParams ) {
         return false;
       }
 
+      // Without a target value, filtering doesn't mean much: move along
+      if ( typeof targetValue === 'undefined' ) {
+        return true;
+      }
+
       var tokenPropToTest = token[ key ];
 
       if ( isRegExp( targetValue ) ) {
         // Special-case if the target value is a RegExp
-        return valid && targetValue.test( tokenPropToTest );
+        return targetValue.test( tokenPropToTest );
       }
 
-      return valid && tokenPropToTest === targetValue;
+      return tokenPropToTest === targetValue;
     }
 
     // Check each property on this token against the provided params
