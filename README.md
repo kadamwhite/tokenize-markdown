@@ -15,7 +15,7 @@ Install via NPM with `npm install tokenize-markdown`.
 var tokenizeMarkdown = require( 'tokenize-markdown' );
 
 // Get all tokens
-var tokens = tokenizeMarkdown.fromFiles( 'some_markdown_file.md' ] );
+var tokens = tokenizeMarkdown.fromFiles( ['some_markdown_file.md' ] );
 
 // Get only tokens of type "code" and lang "javascript"
 var jsTokens = tokenizeMarkdown.fromFiles( [ 'slides/*.md' ], {
